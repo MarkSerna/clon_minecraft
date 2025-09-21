@@ -12,6 +12,7 @@ import { Water, Lake, Waterfall } from './components/Water.jsx'
 import { PerformanceMonitor, PerformanceSettings, usePerformanceOptimization } from './components/PerformanceMonitor.jsx'
 import { PhysicsSystem } from './components/PhysicsSystem.jsx'
 import { GameUI } from './components/GameUI.jsx'
+import { PlayerHands } from './components/PlayerHands.jsx'
 import { useStore } from './hooks/useStore.js'
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <PhysicsSystem />
         </Physics>
         <PointerLockControls />
+        <PlayerHands />
         <PerformanceMonitor 
           showStats={true}
           onPerformanceChange={handlePerformanceChange}

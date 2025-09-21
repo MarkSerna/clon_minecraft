@@ -23,7 +23,8 @@ export const Cube = ({ id, position, texture, isTerrainBlock = false }) => {
   const handleClick = (e) => {
     e.stopPropagation()
 
-    if (e.altKey) {
+    // Clic izquierdo (botón 0) = ROMPER bloque
+    if (e.nativeEvent.button === 0) {
       // Los bloques de terreno requieren más tiempo para romperse
       if (isTerrainBlock) {
         // TODO: Implementar sistema de minado con tiempo
@@ -38,31 +39,34 @@ export const Cube = ({ id, position, texture, isTerrainBlock = false }) => {
       return
     }
 
-    // Obtener la cara clickeada basada en la normal
-    const clickedFace = e.face.normal
-    const [x, y, z] = position
+    // Clic derecho (botón 2) = CONSTRUIR bloque
+    if (e.nativeEvent.button === 2) {
+      // Obtener la cara clickeada basada en la normal
+      const clickedFace = e.face.normal
+      const [x, y, z] = position
 
-    // Calcular la nueva posición basada en la cara clickeada
-    let newX = x
-    let newY = y
-    let newZ = z
+      // Calcular la nueva posición basada en la cara clickeada
+      let newX = x
+      let newY = y
+      let newZ = z
 
-    // Determinar la dirección basada en la normal de la cara
-    if (Math.abs(clickedFace.x) > 0.5) {
-      // Cara lateral (izquierda o derecha)
-      newX += clickedFace.x > 0 ? 1 : -1
-    } else if (Math.abs(clickedFace.y) > 0.5) {
-      // Cara superior o inferior
-      newY += clickedFace.y > 0 ? 1 : -1
-    } else if (Math.abs(clickedFace.z) > 0.5) {
-      // Cara frontal o trasera
-      newZ += clickedFace.z > 0 ? 1 : -1
+      // Determinar la dirección basada en la normal de la cara
+      if (Math.abs(clickedFace.x) > 0.5) {
+        // Cara lateral (izquierda o derecha)
+        newX += clickedFace.x > 0 ? 1 : -1
+      } else if (Math.abs(clickedFace.y) > 0.5) {
+        // Cara superior o inferior
+        newY += clickedFace.y > 0 ? 1 : -1
+      } else if (Math.abs(clickedFace.z) > 0.5) {
+        // Cara frontal o trasera
+        newZ += clickedFace.z > 0 ? 1 : -1
+      }
+
+      addCube(newX, newY, newZ)
+      // Agregar partículas al colocar bloque
+      addParticles([newX, newY, newZ], texture)
+      playPlaceSound()
     }
-
-    addCube(newX, newY, newZ)
-    // Agregar partículas al colocar bloque
-    addParticles([newX, newY, newZ], texture)
-    playPlaceSound()
   }
 
   return (
