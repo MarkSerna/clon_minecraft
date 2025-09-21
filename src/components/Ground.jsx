@@ -1,6 +1,7 @@
 import { usePlane } from '@react-three/cannon'
 import { useStore } from '../hooks/useStore.js'
 import { groundTexture } from '../images/textures.js'
+import { useAudio } from '../hooks/useAudio.js'
 
 export function Ground () {
   const [ref] = usePlane(() => ({
@@ -8,7 +9,12 @@ export function Ground () {
     position: [0, -0.5, 0]
   }))
 
-  const [addCube] = useStore(state => [state.addCube])
+  const [addCube, addParticles, texture] = useStore(state => [
+    state.addCube, 
+    state.addParticles, 
+    state.texture
+  ])
+  const { playPlaceSound } = useAudio()
 
   groundTexture.repeat.set(100, 100)
 
@@ -18,6 +24,9 @@ export function Ground () {
       .map(n => Math.ceil(n))
 
     addCube(x, y, z)
+    // Agregar partículas al colocar bloque en el suelo
+    addParticles([x, y, z], texture)
+    playPlaceSound()
   }
 
   return (

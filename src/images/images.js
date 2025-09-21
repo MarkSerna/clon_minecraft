@@ -1,5 +1,25 @@
-export { default as grassImg } from './grass.jpg'
-export { default as glassImg } from './glass.png'
-export { default as dirtImg } from './dirt.jpg'
-export { default as logImg } from './log.jpg'
-export { default as woodImg } from './wood.png'
+import grassImg from './grass.jpg'
+import dirtImg from './dirt.jpg'
+import logImg from './log.jpg'
+import glassImg from './glass.png'
+import woodImg from './wood.png'
+import stoneImg from './stone.svg'
+import cobblestoneImg from './cobblestone.svg'
+import sandImg from './sand.svg'
+import gravelImg from './gravel.svg'
+import coalOreImg from './coal_ore.svg'
+import ironOreImg from './iron_ore.svg'
+
+export {
+  grassImg,
+  dirtImg,
+  logImg,
+  glassImg,
+  woodImg,
+  stoneImg,
+  cobblestoneImg,
+  sandImg,
+  gravelImg,
+  coalOreImg,
+  ironOreImg
+}

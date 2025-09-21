@@ -1,0 +1,16 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="cobblePattern" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#6a6a6a"/>
+      <polygon points="0,0 8,2 6,8 2,6" fill="#7a7a7a"/>
+      <polygon points="8,2 16,0 14,6 10,8" fill="#5a5a5a"/>
+      <polygon points="2,6 6,8 4,14 0,16" fill="#8a8a8a"/>
+      <polygon points="10,8 14,6 16,16 8,14" fill="#4a4a4a"/>
+    </pattern>
+  </defs>
+  <rect width="64" height="64" fill="url(#cobblePattern)"/>
+  <rect x="0" y="0" width="64" height="2" fill="#7a7a7a"/>
+  <rect x="0" y="62" width="64" height="2" fill="#4a4a4a"/>
+  <rect x="0" y="0" width="2" height="64" fill="#7a7a7a"/>
+  <rect x="62" y="0" width="2" height="64" fill="#4a4a4a"/>
+</svg>

@@ -47,8 +47,73 @@ body {
   gap: 8px;
 }
 
-.texture-selector.hidden {
-  display: none;
+/* Hotbar Styles */
+.hotbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 4px;
+  border: 2px solid #8B8B8B;
+}
+
+.hotbar-slot {
+  width: 40px;
+  height: 40px;
+  background: #373737;
+  border: 2px solid #8B8B8B;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.hotbar-slot:hover {
+  background: #4a4a4a;
+  border-color: #ffffff;
+}
+
+.hotbar-slot.active {
+  background: #5a5a5a;
+  border-color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.hotbar-item {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.hotbar-count {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 10px;
+  color: white;
+  text-shadow: 1px 1px 0 #000;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+}
+
+.hotbar-number {
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  font-size: 8px;
+  color: #ccc;
+  text-shadow: 1px 1px 0 #000;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
 }
 
 .texture-selector img {

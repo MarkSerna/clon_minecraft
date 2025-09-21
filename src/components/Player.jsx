@@ -3,6 +3,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { useEffect, useRef } from 'react'
 import { Vector3 } from 'three'
 import { useKeyboard } from '../hooks/useKeyboard.js'
+import { useStore } from '../hooks/useStore.js'
 
 const CHARACTER_SPEED = 4
 const CHARACTER_JUMP_FORCE = 4
@@ -16,11 +17,13 @@ export const Player = () => {
     jump
   } = useKeyboard()
 
+  const [updatePlayerPosition] = useStore(state => [state.updatePlayerPosition])
+
   const { camera } = useThree()
   const [ref, api] = useSphere(() => ({
     mass: 1,
     type: 'Dynamic',
-    position: [0, 0.5, 0]
+    position: [0, 10, 0] // Posición inicial más alta para el mundo procedural
   }))
 
   const pos = useRef([0, 0, 0])
@@ -45,6 +48,9 @@ export const Player = () => {
         pos.current[2] // z
       )
     )
+
+    // Actualizar posición del jugador en el store para el mundo procedural
+    updatePlayerPosition(pos.current)
 
     const direction = new Vector3()
 

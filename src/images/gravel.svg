@@ -1,0 +1,17 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="gravelPattern" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#8a8a8a"/>
+      <ellipse cx="2" cy="2" rx="1" ry="0.8" fill="#6a6a6a"/>
+      <ellipse cx="6" cy="3" rx="0.8" ry="1" fill="#9a9a9a"/>
+      <ellipse cx="4" cy="6" rx="1.2" ry="0.6" fill="#7a7a7a"/>
+      <ellipse cx="1" cy="5" rx="0.6" ry="0.9" fill="#5a5a5a"/>
+      <ellipse cx="7" cy="7" rx="0.7" ry="0.7" fill="#aaa"/>
+    </pattern>
+  </defs>
+  <rect width="64" height="64" fill="url(#gravelPattern)"/>
+  <rect x="0" y="0" width="64" height="2" fill="#9a9a9a"/>
+  <rect x="0" y="62" width="64" height="2" fill="#5a5a5a"/>
+  <rect x="0" y="0" width="2" height="64" fill="#9a9a9a"/>
+  <rect x="62" y="0" width="2" height="64" fill="#5a5a5a"/>
+</svg>

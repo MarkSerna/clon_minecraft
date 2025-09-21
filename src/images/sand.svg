@@ -1,0 +1,15 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="sandPattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="#f4e4a6"/>
+      <circle cx="1" cy="1" r="0.3" fill="#e6d68a"/>
+      <circle cx="3" cy="2" r="0.2" fill="#f8e8b0"/>
+      <circle cx="2" cy="3" r="0.25" fill="#e0ca7e"/>
+    </pattern>
+  </defs>
+  <rect width="64" height="64" fill="url(#sandPattern)"/>
+  <rect x="0" y="0" width="64" height="2" fill="#f8e8b0"/>
+  <rect x="0" y="62" width="64" height="2" fill="#e0ca7e"/>
+  <rect x="0" y="0" width="2" height="64" fill="#f8e8b0"/>
+  <rect x="62" y="0" width="2" height="64" fill="#e0ca7e"/>
+</svg>

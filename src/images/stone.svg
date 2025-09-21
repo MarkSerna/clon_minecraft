@@ -1,0 +1,15 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="stonePattern" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#7a7a7a"/>
+      <circle cx="2" cy="2" r="0.5" fill="#6a6a6a"/>
+      <circle cx="6" cy="4" r="0.3" fill="#8a8a8a"/>
+      <circle cx="4" cy="6" r="0.4" fill="#5a5a5a"/>
+    </pattern>
+  </defs>
+  <rect width="64" height="64" fill="url(#stonePattern)"/>
+  <rect x="0" y="0" width="64" height="2" fill="#8a8a8a"/>
+  <rect x="0" y="62" width="64" height="2" fill="#5a5a5a"/>
+  <rect x="0" y="0" width="2" height="64" fill="#8a8a8a"/>
+  <rect x="62" y="0" width="2" height="64" fill="#5a5a5a"/>
+</svg>

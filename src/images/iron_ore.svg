@@ -1,0 +1,22 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="ironPattern" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#7a7a7a"/>
+      <circle cx="2" cy="2" r="0.5" fill="#6a6a6a"/>
+      <circle cx="6" cy="4" r="0.3" fill="#8a8a8a"/>
+    </pattern>
+  </defs>
+  <rect width="64" height="64" fill="url(#ironPattern)"/>
+  <!-- Vetas de hierro -->
+  <ellipse cx="18" cy="25" rx="7" ry="4" fill="#d4a574"/>
+  <ellipse cx="42" cy="40" rx="8" ry="5" fill="#c49464"/>
+  <ellipse cx="28" cy="45" rx="6" ry="3" fill="#d4a574"/>
+  <ellipse cx="48" cy="18" rx="5" ry="4" fill="#c49464"/>
+  <ellipse cx="12" cy="52" rx="4" ry="3" fill="#d4a574"/>
+  <ellipse cx="55" cy="50" rx="3" ry="2" fill="#c49464"/>
+  <!-- Bordes -->
+  <rect x="0" y="0" width="64" height="2" fill="#8a8a8a"/>
+  <rect x="0" y="62" width="64" height="2" fill="#5a5a5a"/>
+  <rect x="0" y="0" width="2" height="64" fill="#8a8a8a"/>
+  <rect x="62" y="0" width="2" height="64" fill="#5a5a5a"/>
+</svg>
