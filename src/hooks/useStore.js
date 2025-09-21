@@ -55,6 +55,15 @@ export const useStore = create((set) => ({
   updatePlayerPosition: (position) => {
     set(() => ({ playerPosition: position }))
   },
-  saveWorld: () => {},
-  resetWorld: () => {}
+  saveWorld: (worldName) => {
+    // Implementación movida a useWorldSave hook
+    console.log(`Guardando mundo: ${worldName}`)
+  },
+  resetWorld: () => {
+    set(() => ({
+      cubes: [],
+      playerPosition: [0, 10, 0],
+      particles: []
+    }))
+  }
 }))

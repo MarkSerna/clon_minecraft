@@ -2,7 +2,8 @@ import { useRef, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { DirectionalLight, Vector3 } from 'three'
 
-export const Lighting = ({ timeOfDay = 0.5 }) => {
+export const Lighting = () => {
+  const timeOfDay = useDayNightCycle()
   const directionalLightRef = useRef()
   const shadowCameraRef = useRef()
   
