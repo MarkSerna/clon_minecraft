@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 const MATERIALS = [
   'dirt', 'grass', 'glass', 'wood', 'log', 
-  'stone', 'cobblestone', 'sand', 'gravel'
+  'stone', 'cobblestone', 'sand', 'gravel', 'coalOre', 'ironOre'
 ]
 
 export const Hotbar = () => {
@@ -15,28 +15,28 @@ export const Hotbar = () => {
 
   const {
     dirt, grass, glass, wood, log,
-    stone, cobblestone, sand, gravel, coalOre
+    stone, cobblestone, sand, gravel, coalOre, ironOre
   } = useKeyboard()
 
   // Actualizar slot activo basado en teclas numéricas
   useEffect(() => {
     const keyMappings = {
       dirt: 0, grass: 1, glass: 2, wood: 3, log: 4,
-      stone: 5, cobblestone: 6, sand: 7, gravel: 8, coalOre: 8
+      stone: 5, cobblestone: 6, sand: 7, gravel: 8, coalOre: 9, ironOre: 10
     }
 
-    const pressedKeys = { dirt, grass, glass, wood, log, stone, cobblestone, sand, gravel, coalOre }
+    const pressedKeys = { dirt, grass, glass, wood, log, stone, cobblestone, sand, gravel, coalOre, ironOre }
     const activeKey = Object.entries(pressedKeys).find(([key, pressed]) => pressed)
     
     if (activeKey) {
       const [keyName] = activeKey
       const slotIndex = keyMappings[keyName]
-      if (slotIndex !== undefined) {
+      if (slotIndex !== undefined && slotIndex < MATERIALS.length) {
         setActiveSlot(slotIndex)
-        setTexture(keyName === 'coalOre' ? 'coalOre' : MATERIALS[slotIndex])
+        setTexture(MATERIALS[slotIndex])
       }
     }
-  }, [dirt, grass, glass, wood, log, stone, cobblestone, sand, gravel, coalOre, setTexture])
+  }, [dirt, grass, glass, wood, log, stone, cobblestone, sand, gravel, coalOre, ironOre, setTexture])
 
   // Manejar scroll del ratón
   useEffect(() => {
